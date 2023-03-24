@@ -6,7 +6,7 @@ from django.shortcuts import render
 # dtl--> django templets languages
 
 def index(request):
-    data = {'name':'roaa mamoun abdelqader sartawi',
+    data = {'name':'roaa',
              'age':'24'}
     return render(request, 'pages/index.html', data)
 
