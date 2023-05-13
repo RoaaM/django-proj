@@ -1,11 +1,33 @@
 <!--this how we inherets from another html page
     but when we inherets from another page we cant write 
     html language without blocks -->
-
+{% comment %} 
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
 
 <h1>hello</h1>
-{% endblock content %}
+{% endblock content %} {% endcomment %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OCR using Google Cloud Vision API</title>
+</head>
+<body>
+    <h1>OCR using Google Cloud Vision API</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Recognize Text</button>
+    </form>
+    {% if text %}
+        <hr>
+        <h2>Recognized Text</h2>
+        <pre>{{ text }}</pre>
+    {% endif %}
+</body>
+</html>
+
 
